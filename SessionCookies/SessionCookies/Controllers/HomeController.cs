@@ -8,6 +8,7 @@ namespace SessionCookies.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             if(Request.Cookies.AllKeys.Contains("username"))
@@ -17,6 +18,7 @@ namespace SessionCookies.Controllers
             return View();
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -49,7 +51,7 @@ namespace SessionCookies.Controllers
                 }
                 else
                 {
-                    Session["username"] = username;
+                    Session.Add("username", username);
                 }
                 return RedirectToAction("About");
             }

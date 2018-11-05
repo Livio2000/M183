@@ -5,21 +5,22 @@
 <div class="jumbotron">
     <h1>Login</h1>
     <div>
-        <form class="well" action="./Home/Login" method="post">
+        <form class="well" action="/Home/Login" method="post">
+            @Html.AntiForgeryToken()
             <div>
                 <label>Username: </label>
                 <input name="username" />
             </div>
             <div>
                 <label>Password: </label>
-                <input name="password"/>
+                <input name="password" />
             </div>
             <div>
                 <label>Eingeloggt bleiben: </label>
                 <input type="checkbox" name="checkbox" />
             </div>
             <div>
-                <input type="submit" name="login" value="login"/>
+                <input type="submit" name="login" value="login" />
             </div>
             <div>
                 @ViewBag.Message
