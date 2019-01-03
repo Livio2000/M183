@@ -54,7 +54,7 @@
             var text = document.getElementById("plaintext").value;
             var histogram = createHistogramValues(text);
 
-            documen.getElementById("chart_plaintext").innerHTML = createHTMLTable(histogram);
+            document.getElementById("chart_plaintext").innerHTML = createHTMLTable(histogram);
         });
 
         document.getElementById("encrypt").addEventListener("click", function (e) {
@@ -70,7 +70,7 @@
         function createHistogramValues(text) {
             var histogram_prepare = [];
 
-            for (var i = 0, len = text.length; i < length; i++) {
+            for (var i = 0, len = text.length; i < len; i++) {
                 var letter = text[i];
                 if (letter.match(/[a-z]/i)) {
                     histogram_prepare[letter] = (histogram_prepare[letter] || 0) + 1;
@@ -129,7 +129,7 @@
             var text = document.getElementById("ciphertext").value;
             var histogram = createHistogramValues(text);
 
-            documen.getElementById("chart_ciphertext").innerHTML = createHTMLTable(histogram);
+            document.getElementById("chart_ciphertext").innerHTML = createHTMLTable(histogram);
         });
 
         document.getElementById("decrypt").addEventListener("click", function (e) {
